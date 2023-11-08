@@ -1,3 +1,24 @@
+@font-face {
+  font-family: museoSans;
+  src: url(../fonts/museosans-300.ttf);
+}
+
+@font-face {
+  font-family:museoSansBold ;
+  src: url(../fonts/museosans-700.ttf);
+}
+
+@font-face {
+  font-family:doorEenKindGeschreven ;
+  src: url(../fonts/BabyDoll.ttf);
+}
+
+@font-face {
+  font-family: vijfJaarOud;
+  src: url(../fonts/5yearsoldfont.ttf);
+}
+
+
 /**************/
 /* CSS REMEDY */
 /**************/
@@ -7,19 +28,77 @@
   box-sizing:border-box;  
 }
 
-body {
-  margin:0;
+html {
+  background-image: url(../images/livingroombackdrop.jpg);
+  background-size: cover;
+  background-size: 110 90%;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  cursor: url(../images/handje.png);
+  width: 100dvw;
+  height: 100dvh;
+  user-select: none;
 }
 
+
+body {
+  margin:0;
+  /* overflow: hidden; */
+  position: relative;
+  pointer-events: all;
+  cursor: url(../images/handjesmall.png), pointer;
+}
+
+/* body.donker { */
+  /* background: rgb(255,255,255); */
+  /* background: radial-gradient(circle, rgba(255,255,255,.3) 0%, rgba(187,224,241,.3) 24%, rgba(0,0,0,.3) 100%); */
+  /* background: #000000;
+  z-index: 20; */
+  /* animation-name: flickeranimation;  
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+
+@keyframes flickeranimation {
+  0% {background-color: rgba(0,0,0,.9);}
+  5% {background-color: rgba(0,0,0,.1);}
+  30% {background-color: rgba(0,0,0,.9);}
+  32% {background-color: rgba(0,0,0,.1);}
+  38% {background-color: rgba(0,0,0,.9);}
+  45% {background-color: rgba(0,0,0,.1);}
+  70% {background-color: rgba(0,0,0,.9);}
+  72% {background-color: rgba(0,0,0,.1);}
+  75% {background-color: rgba(0,0,0,.9);}
+  80% {background-color: rgba(0,0,0,.1);}
+  95% {background-color: rgba(0,0,0,.9);}
+  100% {background-color: rgba(0,0,0,.1);}
+} */
+
+
 button:not([disabled]) {
-  cursor:pointer;
+  cursor: url(../images/hand\ pointer.png);
 }
 
 /* img {
   max-width:100%;
 } */
 
+body div{
+  position: absolute;
+  width: 100dvw;
+  height: 100dvh;
+  z-index: -1;
+  left: 0;
+  bottom: 0;
+}
 
+body div img{
+  position: absolute;
+  width: 80vw;
+  left: calc(50% - 40vw);
+  bottom: 0;
+}
 
 
 
@@ -29,11 +108,34 @@ button:not([disabled]) {
 
 :root {
   --color-headings:crimson
+  --color-black:black
   /* ... */
 
 }
 
+/* div:first-of-type{
+  display: none;
+} */
 
+.nietDonkerSwa {
+  display: block;
+  position: absolute;
+  background-color: black;
+  width: 5000px;
+  height: 5000px;
+  z-index: 500;
+  opacity: 0;
+}
+
+.donkerSwa {
+  display: block;
+  position: absolute;
+  background-color: black;
+  width: 5000px;
+  height: 5000px;
+  z-index: 500;
+  opacity: 90%;
+}
 
 
 
@@ -47,16 +149,20 @@ h1 {
 
 /* ... */ 
 
-section {
-  display: grid;
-  place-items: center;
-  /* justify-content: center; */
-  margin-top: 15vh;
-  /* max-width: 80%; */
-  /* width: 50vw; */
+body section:nth-of-type(1) {
+  /* display: grid;
+  place-items: center; */
+  /* margin-top: 15vh; */
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  z-index: 10;
+  left: 0;
+  bottom: 0;
 }
 
 ul {
+  /* aspect-ratio: 300/265; */
   display: grid;
   grid-template-columns: repeat(7, 1fr);
     /* grid-template-columns: repeat(1, 1fr); */
@@ -73,26 +179,276 @@ ul {
   background-color: gray;
   margin: 0;
   padding: 0;
-  width: 50vw;
+  width: 20vw;
   overflow: scroll;
   overflow-y: hidden;
   
 }
 
 li img {
-  aspect-ratio: 1/1;
+  /* aspect-ratio: 300/265; */
   /* max-width: 15vw; */
   margin: 0;
   padding: 0;
   width: 100%;
-  min-width: 20vh;
+  min-width: 30vh;
 }
 
 li {
-  aspect-ratio: 1/1;
+  /* aspect-ratio: 300/265; */
   max-width: 15vw;
   margin: 0;
   padding: 0;
 }
 
-section img {}
+
+svg {
+  position: absolute;
+  width: 20vw;
+  bottom: 2vh;
+  z-index: 10;
+  left: calc(50% - 10vw);
+  filter: drop-shadow(4px 44px 33px #000000);
+  transition: ease-in-out 1s;
+  /* opacity: 0%; */
+}
+
+svg:hover {
+  bottom: 10vh;
+  scale: 1.4;
+  transition: ease-in-out .5s;
+  cursor: url(../images/handjepointersmall.png), pointer;
+}
+
+.controllerzichtbaar:hover {
+  bottom: 10vh;
+  scale: 1.4;
+  transition: ease-in-out .5s;
+  cursor: url(../images/handjepointersmall.png), pointer;
+}
+
+.controllerzichtbaar {
+  position: absolute;
+  width: 20vw;
+  bottom: 2vh;
+  z-index: 10;
+  left: calc(50% - 10vw);
+  filter: drop-shadow(4px 44px 33px #000000);
+  transition: ease-in-out 1s; 
+  opacity: 1;
+}
+
+img.ROB {
+  position: absolute;
+  top: 5vh;
+  right: -10vw;
+  width: 30vw;
+  height: auto;
+  scale: 0.9;
+}
+
+
+
+
+
+/* img.ROBdonker{
+  position: absolute;
+  top: 10vh;
+  left: -10vw;
+  width: 30vw;
+  height: auto;
+  scale: 0.9;
+  animation-name: flickeranimationopacity;  
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+
+@keyframes flickeranimationopacity {
+  0% {opacity: .9;}
+  5% {opacity: .1;}
+  30% {opacity: .9;}
+  32% {opacity: .1;}
+  38% {opacity: .9;}
+  45% {opacity: .1;}
+  70% {opacity: .9;}
+  72% {opacity: .1;}
+  75% {opacity: .9;}
+  80% {opacity: .1;}
+  95% {opacity: .9;}
+  100% {opacity: .1;}
+} */
+
+button {
+  cursor: url(../images/handjepointersmall.png), pointer;
+}
+
+button.lichtAan{
+  position: absolute;
+  top: 50vh;
+  right: 2vw;
+  display: block;
+  width: 100px;
+  height: 170px;
+  background-image: url(../images/lightson.png);
+  background-position-x: center;
+  border: none;
+  z-index: 15;
+  scale: .7;
+}
+
+button.lichtUit{
+  position: absolute;
+  top: 50vh;
+  right: 2vw;
+  display: block;
+  width: 100px;
+  height: 170px;
+  background-image: url(../images/lightsoff.png);
+  background-position-x: center;
+  border: none;
+  z-index: 15;
+  scale: .7;
+}
+
+button:nth-of-type(1){
+  position: absolute;
+  width: 10vw;
+  height: 30vh;
+  left: calc(50% - 5vw);
+  top: 37vh;
+  z-index: 11;
+  opacity: 0%;
+
+}
+
+button:nth-of-type(2){
+  position: absolute;
+  width: 3vw;
+  height: 5vh;
+  left: calc(14% - 5vw);
+  bottom: 0;
+  z-index: 11;
+  opacity: 0%;
+
+}
+
+/* button:nth-of-type(3){
+  position: absolute;
+  top: 50vh;
+  right: 4vw; 
+  z-index: 11;
+  scale: 1.5;
+} */
+
+div.welDonker{
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(187,224,241,1) 7%, rgba(0,0,0,.5) 27%);
+  z-index: 50;
+  opacity: 10%;
+  top: -10vh;
+  scale: 1.4;
+}
+
+div.nietDonker{
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(187,224,241,1) 7%, rgba(0,0,0,1) 27%);
+  z-index: 50;
+  opacity: 0%;
+  top: -10vh;
+  scale: 1.4;
+}
+
+
+div.donkerEnUit{
+  background: black;
+  z-index: 50;
+  opacity: 50%;
+  top: -10vh;
+  scale: 1.4;
+}
+
+.overlay{
+  pointer-events: none;
+}
+
+audio{
+  display: hidden;
+}
+
+body section:nth-of-type(2){
+  position: absolute;
+  top: 1vh;
+  left: 1vw;
+  width: auto;
+  min-height: 100vh;
+  scale: 0.8;
+  z-index: -4;
+  text-align:center;
+  /* background-image: url(../images/skereposter.png); */
+  background-image: url(../images/skerepostermettekening.png);
+  background-size:100%;
+  background-repeat: no-repeat;
+}
+
+
+body section:nth-of-type(2) h1 {
+  color: rgb(203, 15, 15);
+  padding-top: 1vh;
+  /* font-family:museoSansBold ; */
+  font-family:doorEenKindGeschreven ;
+  font-size:2.5em;
+  min-width: 20vw;
+  max-width: 30vw;
+  margin: 0;
+  margin-top: 4vh;
+}
+
+
+body section:nth-of-type(2) p{
+  /* font-family: museoSans; */
+  font-family: vijfJaarOud;
+  min-width: 30vw;
+  max-width: 30vw;
+  right: 500px;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  font-size: 1.4em;
+  text-align:center;
+}
+
+img.skereposter {
+  position: absolute;
+  z-index: 5;
+  scale: 0.2;
+  bottom: 5vh;
+}
+
+img.plushy {
+  position: absolute;
+  left: 38vw;
+  scale: .2;
+  z-index: -4;
+  top: -35vh;
+}
+
+body section:nth-of-type(3) {
+  position: absolute;
+  /* left: calc(50%-20vw); */
+  right: calc(50% - 20vw);
+  top: 2.5%;
+  width: 40vw;
+  height: 30vw;
+  scale: .5;
+  z-index: -5;
+}
+
+body section:nth-of-type(3) img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: calc(50%-10vw);
+
+}
+
+.upper{
+  z-index: 3;
+}
+
