@@ -6,40 +6,41 @@
 	<meta name="author" content="jouw naam">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<title>VIDii 2023/24 - Tijdlijn</title>
+	<title>Super mario tijdlijn VID minor</title>
 	
 	<link href="styles/style.css" rel="stylesheet">
 	<link rel="icon" type="image/png+xml" href="images/favicon.ico">
 </head>
 
 
+<!-- Overlay die enkel zichtbaar is als licht uit word gezet. -->
+<!-- Een class mag hier, omdat ik hem gebruik om zijn appearance aan te passen via Javascript. De ID is om hem aan te kunnen spreken ongeacht de class. -->
+
 <div id="nietDonkerSwa" class=""></div>
-
-<!-- <button title="Lights" id="myButton" class="lichtAan"></button>
-
-<div class="nietDonker" id="overlay"></div> -->
+<div></div>
 
 <body>
 
-<!-- Oud gif gallerijtje -->
 
-	<!-- <section>
-	<ul>
-		<li><img src="https://www.retrogames.cz/games/001/NES-gameplay.gif" alt="DK"></li>
-		<li><img src="https://4.bp.blogspot.com/-HGGxe6lm3io/VLPkoDyqCEI/AAAAAAAAyXY/EeaZRrLt_TE/s280/Mario_Bros_(Arcade)_13.gif" alt="mario arcade"></li>
-		<li><img src="https://media.tenor.com/76xZhPJyvyEAAAAd/nintendo-mario.gif" alt="mario"></li>
-		<li><img src="https://64.media.tumblr.com/e45b09b1ec42f2f1729f6230eca64e73/f0eaab8bad086f4b-d0/s400x600/6878d16c47b2cd9e09e481a4bdb60c97c5c4dcee.gif" alt="mario2"></li>
-		<li><img src="https://media.tenor.com/cFTJGFRU2ywAAAAd/super-mario-bros-super-mario-bros3.gif" alt="mario3"></li>
-		<li><img src="https://i.gifer.com/2cIK.gif" alt="drmario"></li>
-		<li><img src="https://retrogameman.files.wordpress.com/2018/01/yoshi-screen-shot-2017-06-05-9-24-am-4.jpg" alt="Yoshi"></li>
-	</ul> -->
 
+<!-- Aan/uit knop van televisie -->
 	<button title="On/Off button">TV</button>
 
-	<!-- deze button is in CSS uitgezet omdat ik hier later functionaliteit aan wil toevoegen. -->
+<!-- deze button is in CSS uitgezet omdat ik hier later functionaliteit aan wil toevoegen. -->
 	<button title="TV power plug">Plug</button>
 
+<!-- lichtknopje -->
+<!-- Een class mag hier, omdat ik hem gebruik om zijn appearance aan te passen via Javascript. De ID is om hem aan te kunnen spreken ongeacht de class. -->
 	<button title="Lights" id="myButton" class="lichtAan"></button>
+
+<!-- mario muntje -->
+<button title="Coin sound">muntje</button>
+
+<!-- ster -->
+<button title="ster">Ster</button>
+
+
+
 
 <!-- controller svg -->
 
@@ -124,29 +125,42 @@
 
 
 <!-- TV's -->
+
+<!-- Een div is hier oké, omdat de afbeelding in de div afwisselen via javascript, en ze samen binnen een wrapper gepositioneerd moeten worden. -->
+
 	<div>
 		<img src="./images/tvunitoff.png" alt="TVuit">
-		<!-- <img src="./images/tvuniton.png" alt="TVaan"> -->
-		<!-- <img src="./images/tvunitoffoff.png" alt="TVhelemaaluit"> -->
 	</div>
 
 
 
 
-<!-- ROB -->
+<!-- ROB poster-->
+
+<!-- Ik heb hier ook class gegeven aan de img omdat aanspreken via "img:nth-of-type(2) niet leek te werken. Daarnaast staan er net te veel images in om met img:nth-of-type() images aanspreken overzichtelijk te kunnen doen." -->
+
 <img src="./images/robposter.png" alt="poster" class="ROB">
+
+
+
+<!-- Mario plushy -->
 
 <img src="./images/marioplushy.png" alt="marioplushy" class="plushy">
 
-<!-- skere poster tekst -->
+
+
+
+<!-- Poster met game-info -->
+
 <section>
 	<h1>Lorem ipsum</h1>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-	<!-- <img src="./images/skereposter.png" alt="skereposter" class="skereposter"> -->
 </section>
 
 
-<!-- games -->
+
+
+<!-- Gifjes van games, precies op elkaar gezet, javascript voegt om de beurt een class toe om met z-index ze om de beurt voorop te zetten. -->
 
 <section>
 	<img src="./images/jumpman.gif" alt="DK" id="jumpman" >
@@ -158,13 +172,10 @@
 </section>
 
 
-
+<!-- link naar script -->
 
 <script src="scripts/script.js"></script>
+
 </body>
-
-
-
-
 	
 </html>
