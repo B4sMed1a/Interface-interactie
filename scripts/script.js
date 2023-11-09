@@ -1,26 +1,29 @@
 // JavaScript Document
-console.log("Howdy!");
+// In dit hele document zet ik in de comments in het kort neer wat de code doet.
+// Met sterren geef ik aan hoe goed ik de code begrijp, 1★ betekent bijna niet, 5★ betekent helemaal.
+console.log("Itsumi Mario!");
 
 
-// Gif array
 
-// const plaatje = ['SMB1', 'SMB2', 'SMB3','SML1','SMW','SML2','SM64','SMS','NSMB','SMG','NSMBW','SMG2','SM3DL','NSMB2','NSMBU','SM3DW','SMM','SMR','SMO','SMM2','SMBW',]
-// const body = document.querySelector('body');
 
-// function cycle(){
-//     console.log(status)
-//     plaatje.status 
-// }
+
+
+
+
+
+
 
 
 // Lichtknop en donkere overlay
+// bron: ik.
+// Hoe goed begrijp ik dit stuk code?
+// ★★★★
 
 
 const lightButton = document.getElementById("myButton");
 const bodyBackground = document.querySelector("body");
 const donker = document.getElementById("nietDonkerSwa");
 
-const audioElement = document.getElementById('myAudio');
 
 lightButton.addEventListener("click", function() {
     console.log("check")
@@ -36,10 +39,29 @@ donker.addEventListener("click", function() {
     lightButton.classList.toggle("lichtUit");
 });
 
+//============================================================
+
+    //ster regenboog overlay
+
+    var sterKnop = document.querySelector("button:nth-of-type(5)");
+
+
+    sterKnop.addEventListener("click", function() {
+        console.log("checkster")
+        donker.classList.toggle("ster");
+    });
+
+
+
+
+
+
 
 
 
 // Image wisselen van de televisie
+// Via ChatGPT
+// ★★★
 
 
 var tvAan = document.querySelector("img:first-of-type");
@@ -54,19 +76,30 @@ tvButton.addEventListener("click", function() {
     if (isTVOn) {
         console.log("TV is now on");
         tvAan.src = "./images/tvuniton.png";
-        // nescontroller.classList.remove("controllerzichtbaar");
     } else {
         console.log("TV is now off");
         tvAan.src = "./images/tvunitoff.png";
-        // nescontroller.classList.add("controllerzichtbaar");
     }
 });    
     
+//=====================================================================
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+// Arrays met titels en tekst die op poster staat
+// ★★★★★
 
 var infoHead = document.querySelector("h1");
 var infoText = document.querySelector("p");
@@ -90,6 +123,11 @@ var tekstjes = [
     "'Dr. Mario'(1990) for the NES is a puzzle game featuring Mario as a doctor. Players must match colored pills with viruses to clear the screen. It offers addictive, skill-based gameplay and a memorable soundtrack."
 ];
 
+
+// Knoppen naar links en rechts, met functions die de class 'upper' toevoegt aan de image, afhankelijk van bij welke image je bent.
+// Bron: collab; Bas, Quinten en ChatGPT
+// ★★
+
 var links = document.querySelector("#links");
 var rechts = document.querySelector("#rechts");
 
@@ -106,6 +144,7 @@ var currentIndex = 0;
 function removeAll() {
     for (var i = 0; i < elements.length; i++) {
         elements[i].classList.remove('upper');
+        
     }
 }
 
@@ -114,6 +153,7 @@ function toggleNextElement() {
     currentIndex = (currentIndex + 1) % elements.length;
     elements[currentIndex].classList.add('upper');
     updateInfo();
+    // document.querySelector("linktv").src = "./images/tvuniton.png"
 }
 
 function togglePreviousElement() {
@@ -134,3 +174,44 @@ links.addEventListener('click', togglePreviousElement);
 // Initially, set the 'upper' class on the first element (#jumpman) and update the info accordingly.
 elements[currentIndex].classList.add('upper');
 updateInfo();
+
+// ==================================================================================================
+
+
+// Audio van easter eggs
+// Bron: https://www.myinstants.com/en/search/?name=mario
+// ★★★★
+
+// audio voor muntje
+
+var muntAudio = new Audio("./sounds/coin.mp3");
+var muntKnop = document.querySelector("button:nth-of-type(4)");
+
+function muntGeluid() {
+    console.log("test geluid");
+    muntAudio.play()
+
+}
+
+muntKnop.addEventListener("click", muntGeluid);
+
+
+
+// Audio voor ster.
+
+var sterKnop = document.querySelector("button:nth-of-type(5)");
+var sterAudio = new Audio("./sounds/ster.mp3");
+
+function sterGeluid() {
+    console.log("test geluid");
+    if (sterAudio.paused) {
+        sterAudio.play();
+    }
+    else {
+        sterAudio.pause();
+    }
+}
+
+sterKnop.addEventListener("click", sterGeluid);
+
+
