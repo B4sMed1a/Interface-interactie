@@ -1,3 +1,7 @@
+/**************/
+/*   fonts    */
+/**************/
+
 @font-face {
   font-family: museoSans;
   src: url(../fonts/museosans-300.ttf);
@@ -18,15 +22,45 @@
   src: url(../fonts/5yearsoldfont.ttf);
 }
 
+/* ===================================== */
+
+
+
+
 
 /**************/
 /* CSS REMEDY */
 /**************/
 
+
 /* naar een idee van Jen Simmons */
 *, *::after, *::before {
   box-sizing:border-box;  
 }
+
+
+/* ======================== */
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+
+:root {
+  --color-headings:crimson;
+  --color-black:black;
+}
+
+/* ======================== */
+
+
+
+
+
+/********************/
+/* ALGEMENE STYLING */
+/********************/
 
 html {
   background-image: url(../images/livingroombackdrop.jpg);
@@ -50,48 +84,19 @@ body {
   cursor: url(../images/handjesmall.png), pointer;
 }
 
-/* body.donker { */
-  /* background: rgb(255,255,255); */
-  /* background: radial-gradient(circle, rgba(255,255,255,.3) 0%, rgba(187,224,241,.3) 24%, rgba(0,0,0,.3) 100%); */
-  /* background: #000000;
-  z-index: 20; */
-  /* animation-name: flickeranimation;  
-  animation-iteration-count: infinite;
-  animation-duration: 1s;
-}
-
-@keyframes flickeranimation {
-  0% {background-color: rgba(0,0,0,.9);}
-  5% {background-color: rgba(0,0,0,.1);}
-  30% {background-color: rgba(0,0,0,.9);}
-  32% {background-color: rgba(0,0,0,.1);}
-  38% {background-color: rgba(0,0,0,.9);}
-  45% {background-color: rgba(0,0,0,.1);}
-  70% {background-color: rgba(0,0,0,.9);}
-  72% {background-color: rgba(0,0,0,.1);}
-  75% {background-color: rgba(0,0,0,.9);}
-  80% {background-color: rgba(0,0,0,.1);}
-  95% {background-color: rgba(0,0,0,.9);}
-  100% {background-color: rgba(0,0,0,.1);}
-} */
+/* ======================== */
 
 
-button:not([disabled]) {
-  cursor: url(../images/hand\ pointer.png);
-}
 
-/* img {
-  max-width:100%;
-} */
 
-body div{
-  position: absolute;
-  width: 100dvw;
-  height: 100dvh;
-  z-index: -1;
-  left: 0;
-  bottom: 0;
-}
+
+
+
+/**********/
+/* Images */
+/**********/
+
+/* TV */
 
 body div img{
   position: absolute;
@@ -100,143 +105,28 @@ body div img{
   bottom: 0;
 }
 
+/* Poster met info */
 
-
-/*********************/
-/* CUSTOM PROPERTIES */
-/*********************/
-
-:root {
-  --color-headings:crimson
-  --color-black:black
-  /* ... */
-
-}
-
-/* div:first-of-type{
-  display: none;
-} */
-
-.nietDonkerSwa {
-  display: block;
+img.skereposter {
   position: absolute;
-  background-color: black;
-  width: 5000px;
-  height: 5000px;
-  z-index: 500;
-  opacity: 0;
+  z-index: 5;
+  scale: 0.2;
+  bottom: 5vh;
 }
 
-.donkerSwa {
-  display: block;
+/* Mario knuffel */
+
+/* Image was om onbekende reden niet aan te spreken via :nth-of-type, vandaar de class */
+
+img.plushy {
   position: absolute;
-  background-color: black;
-  width: 5000px;
-  height: 5000px;
-  z-index: 500;
-  opacity: 90%;
+  left: 38vw;
+  scale: .2;
+  z-index: -4;
+  top: -35vh;
 }
 
-
-
-/********************/
-/* ALGEMENE STYLING */
-/********************/
-
-h1 {
-  color:var(--color-headings);
-}
-
-/* ... */ 
-
-body section:nth-of-type(1) {
-  /* display: grid;
-  place-items: center; */
-  /* margin-top: 15vh; */
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  z-index: 10;
-  left: 0;
-  bottom: 0;
-}
-
-ul {
-  /* aspect-ratio: 300/265; */
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-    /* grid-template-columns: repeat(1, 1fr); */
-  /* grid-template-rows: repeat(1, 1fr);  */
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  /* justify-content: center;
-  place-items: center stretch; */
-  /* display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-column-start:2;
-  grid-column-end:5; */
-  list-style:none;
-  background-color: gray;
-  margin: 0;
-  padding: 0;
-  width: 20vw;
-  overflow: scroll;
-  overflow-y: hidden;
-  
-}
-
-li img {
-  /* aspect-ratio: 300/265; */
-  /* max-width: 15vw; */
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-width: 30vh;
-}
-
-li {
-  /* aspect-ratio: 300/265; */
-  max-width: 15vw;
-  margin: 0;
-  padding: 0;
-}
-
-
-svg {
-  position: absolute;
-  width: 20vw;
-  bottom: 2vh;
-  z-index: 10;
-  left: calc(50% - 10vw);
-  filter: drop-shadow(4px 44px 33px #000000);
-  transition: ease-in-out 1s;
-  /* opacity: 0%; */
-}
-
-svg:hover {
-  bottom: 10vh;
-  scale: 1.4;
-  transition: ease-in-out .5s;
-  cursor: url(../images/handjepointersmall.png), pointer;
-}
-
-.controllerzichtbaar:hover {
-  bottom: 10vh;
-  scale: 1.4;
-  transition: ease-in-out .5s;
-  cursor: url(../images/handjepointersmall.png), pointer;
-}
-
-.controllerzichtbaar {
-  position: absolute;
-  width: 20vw;
-  bottom: 2vh;
-  z-index: 10;
-  left: calc(50% - 10vw);
-  filter: drop-shadow(4px 44px 33px #000000);
-  transition: ease-in-out 1s; 
-  opacity: 1;
-}
+/* Image was om onbekende reden niet aan te spreken via :nth-of-type, vandaar de class */
 
 img.ROB {
   position: absolute;
@@ -247,40 +137,34 @@ img.ROB {
   scale: 0.9;
 }
 
-
-
-
-
-/* img.ROBdonker{
+/* img:nth-of-type(3) {
   position: absolute;
-  top: 10vh;
-  left: -10vw;
+  top: 5vh;
+  right: -10vw;
   width: 30vw;
   height: auto;
   scale: 0.9;
-  animation-name: flickeranimationopacity;  
-  animation-iteration-count: infinite;
-  animation-duration: 1s;
-}
-
-@keyframes flickeranimationopacity {
-  0% {opacity: .9;}
-  5% {opacity: .1;}
-  30% {opacity: .9;}
-  32% {opacity: .1;}
-  38% {opacity: .9;}
-  45% {opacity: .1;}
-  70% {opacity: .9;}
-  72% {opacity: .1;}
-  75% {opacity: .9;}
-  80% {opacity: .1;}
-  95% {opacity: .9;}
-  100% {opacity: .1;}
 } */
+
+
+/* ======================== */
+
+
+
+
+
+
+/****************/
+/*    Buttons   */
+/****************/
+
 
 button {
   cursor: url(../images/handjepointersmall.png), pointer;
 }
+
+/* buttons licht */
+/* Button staat in PX omdat deze altijd groot genoeg moet zijn om usable te blijven */
 
 button.lichtAan{
   position: absolute;
@@ -310,6 +194,9 @@ button.lichtUit{
   scale: .7;
 }
 
+
+/* TV button */
+
 button:nth-of-type(1){
   position: absolute;
   width: 10vw;
@@ -318,8 +205,9 @@ button:nth-of-type(1){
   top: 37vh;
   z-index: 11;
   opacity: 0%;
-
 }
+
+/* Button voor stekker die nog niet gebruikt wordt */
 
 button:nth-of-type(2){
   position: absolute;
@@ -329,49 +217,78 @@ button:nth-of-type(2){
   bottom: 0;
   z-index: 11;
   opacity: 0%;
-
 }
 
-/* button:nth-of-type(3){
+button:nth-of-type(4){
   position: absolute;
-  top: 50vh;
-  right: 4vw; 
-  z-index: 11;
-  scale: 1.5;
-} */
+  left: 15vw;
+  top: 85vh;
+  opacity: 0;
+  z-index: 500;
+}
 
-div.welDonker{
-  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(187,224,241,1) 7%, rgba(0,0,0,.5) 27%);
-  z-index: 50;
-  opacity: 10%;
-  top: -10vh;
+button:nth-of-type(5){
+  position: absolute;
+  left: 5vw;
+  top: 22vh;
+  opacity: 0;
+  z-index: 500;
+}
+
+/* ======================== */
+
+
+
+
+
+
+
+/**********************************/
+/*    Section 1: controller SVGH  */
+/**********************************/
+
+body section:nth-of-type(1) {
+  /* display: grid;
+  place-items: center; */
+  /* margin-top: 15vh; */
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  z-index: 10;
+  left: 0;
+  bottom: 0;
+}
+
+svg {
+  position: absolute;
+  width: 20vw;
+  bottom: 2vh;
+  z-index: 10;
+  left: calc(50% - 10vw);
+  filter: drop-shadow(4px 44px 33px #000000);
+  transition: ease-in-out 1s;
+}
+
+svg:hover {
+  bottom: 10vh;
   scale: 1.4;
+  transition: ease-in-out .5s;
+  cursor: url(../images/handjepointersmall.png), pointer;
 }
 
-div.nietDonker{
-  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(187,224,241,1) 7%, rgba(0,0,0,1) 27%);
-  z-index: 50;
-  opacity: 0%;
-  top: -10vh;
-  scale: 1.4;
-}
+/* =============================================== */
 
 
-div.donkerEnUit{
-  background: black;
-  z-index: 50;
-  opacity: 50%;
-  top: -10vh;
-  scale: 1.4;
-}
 
-.overlay{
-  pointer-events: none;
-}
 
-audio{
-  display: hidden;
-}
+
+
+
+
+/************************************/
+/*    Section 2: poster met info   */
+/***********************************/
+
 
 body section:nth-of-type(2){
   position: absolute;
@@ -390,7 +307,7 @@ body section:nth-of-type(2){
 
 
 body section:nth-of-type(2) h1 {
-  color: rgb(203, 15, 15);
+  color: var(--color-headings);
   padding-top: 1vh;
   /* font-family:museoSansBold ; */
   font-family:doorEenKindGeschreven ;
@@ -414,41 +331,131 @@ body section:nth-of-type(2) p{
   text-align:center;
 }
 
-img.skereposter {
-  position: absolute;
-  z-index: 5;
-  scale: 0.2;
-  bottom: 5vh;
-}
+/* ======================================= */
 
-img.plushy {
-  position: absolute;
-  left: 38vw;
-  scale: .2;
-  z-index: -4;
-  top: -35vh;
-}
+
+
+
+
+
+
+
+/***********************************/
+/*    Section 3: gifjes van games  */
+/***********************************/
+
 
 body section:nth-of-type(3) {
   position: absolute;
   /* left: calc(50%-20vw); */
   right: calc(50% - 20vw);
   top: 2.5%;
+  /* bottom: 0; */
   width: 40vw;
   height: 30vw;
   scale: .5;
   z-index: -5;
 }
 
+
 body section:nth-of-type(3) img{
   position: absolute;
   width: 100%;
   height: 100%;
   left: calc(50%-10vw);
-
 }
+
 
 .upper{
   z-index: 3;
 }
 
+/* ======================================= */
+
+
+
+
+
+
+
+/********************/
+/*     Classes      */
+/********************/
+
+.donkerSwa {
+  display: block;
+  position: absolute;
+  background-color: var(--color-black);
+  width: 5000px;
+  height: 5000px;
+  z-index: 500;
+  opacity: 90%;
+}
+
+
+
+
+
+
+.ster {
+  display: block;
+  position: absolute;
+  animation: rainbow-bg .5s linear;
+	animation-iteration-count: infinite;
+  width: 5000px;
+  height: 5000px;
+  z-index: 500;
+  opacity: 50%;
+}
+
+@keyframes rainbow-bg{
+  100%,0%{
+    background-color: rgb(255,0,0);
+  }
+  8%{
+    background-color: rgb(255,127,0);
+  }
+  16%{
+    background-color: rgb(255,255,0);
+  }
+  25%{
+    background-color: rgb(127,255,0);
+  }
+  33%{
+    background-color: rgb(0,255,0);
+  }
+  41%{
+    background-color: rgb(0,255,127);
+  }
+  50%{
+    background-color: rgb(0,255,255);
+  }
+  58%{
+    background-color: rgb(0,127,255);
+  }
+  66%{
+    background-color: rgb(0,0,255);
+  }
+  75%{
+    background-color: rgb(127,0,255);
+  }
+  83%{
+    background-color: rgb(255,0,255);
+  }
+  91%{
+    background-color: rgb(255,0,127);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======================================= */
