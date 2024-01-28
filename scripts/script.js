@@ -43,7 +43,7 @@ donker.addEventListener("click", function() {
 
     //ster regenboog overlay
 
-    var sterKnop = document.querySelector("button:nth-of-type(5)");
+    var sterKnop = document.querySelector("button:nth-of-type(4)");
 
 
     sterKnop.addEventListener("click", function() {
@@ -65,7 +65,7 @@ donker.addEventListener("click", function() {
 
 
 var tvAan = document.querySelector("img:first-of-type");
-var tvButton = document.querySelector("button:first-of-type");
+var tvButton = document.querySelector("button:nth-of-type(1)");
 var nescontroller = document.querySelector("section:first-of-type")
 
 let isTVOn = false;
@@ -81,6 +81,10 @@ tvButton.addEventListener("click", function() {
         tvAan.src = "./images/tvunitoff.png";
     }
 });    
+
+
+
+
     
 //=====================================================================
 
@@ -144,7 +148,6 @@ var currentIndex = 0;
 function removeAll() {
     for (var i = 0; i < elements.length; i++) {
         elements[i].classList.remove('upper');
-        
     }
 }
 
@@ -178,6 +181,9 @@ updateInfo();
 // ==================================================================================================
 
 
+
+
+
 // Audio van easter eggs
 // Bron: https://www.myinstants.com/en/search/?name=mario
 // ★★★★
@@ -185,7 +191,7 @@ updateInfo();
 // audio voor muntje
 
 var muntAudio = new Audio("./sounds/coin.mp3");
-var muntKnop = document.querySelector("button:nth-of-type(4)");
+var muntKnop = document.querySelector("button:nth-of-type(3)");
 
 function muntGeluid() {
     console.log("test geluid");
@@ -199,7 +205,7 @@ muntKnop.addEventListener("click", muntGeluid);
 
 // Audio voor ster.
 
-var sterKnop = document.querySelector("button:nth-of-type(5)");
+// var sterKnop = document.querySelector("button:nth-of-type(5)");
 var sterAudio = new Audio("./sounds/ster.mp3");
 
 function sterGeluid() {
