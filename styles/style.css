@@ -65,14 +65,15 @@
 html {
   background-image: url(../images/livingroombackdrop.jpg);
   background-size: cover;
-  background-size: 110 90%;
+  /* background-size: 110 90%; */
   background-position: center bottom;
   background-repeat: no-repeat;
   overflow: hidden;
   cursor: url(../images/handje.png);
-  width: 100dvw;
-  height: 100dvh;
+  /* width: 100dvw; */
+  /* height: 100dvh; */
   user-select: none;
+  overflow:hidden;
 }
 
 
@@ -98,12 +99,64 @@ body {
 
 /* TV */
 
-body div img{
+body > div:nth-of-type(2){
+  --console-size:max(80vw, 32em);
+
   position: absolute;
-  width: 80vw;
-  left: calc(50% - 40vw);
+  width: var(--console-size);
+  left: calc(50% - var(--console-size) * .5);
   bottom: 0;
+  /* background-color: red; */
 }
+
+body > div:nth-of-type(2) > img{
+  width: 100%;
+  display:block;
+  z-index: 5;
+  position: relative;
+}
+
+
+/***********************************/
+/*    Section 3: gifjes van games  */
+/***********************************/
+body > div:nth-of-type(2) section{
+  position: absolute;
+  /* display: none; */
+
+  right: calc(50% - var(--console-size) * .26 * .5);
+  top:calc( var(--console-size) * .1 );
+
+  width: calc( var(--console-size) * .26 );
+  height: calc( var(--console-size) * .26 * .75 );
+}
+
+
+body > div:nth-of-type(2) section img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display:block;
+}
+
+
+.upper{
+  z-index: 3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Poster met info */
 
@@ -119,11 +172,11 @@ img.skereposter {
 /* Image was om onbekende reden niet aan te spreken via :nth-of-type, vandaar de class */
 
 img.plushy {
-  position: absolute;
-  left: 38vw;
-  scale: .2;
-  z-index: -4;
-  top: -35vh;
+  position: fixed;
+  right: 10vw;
+  width:15vw;
+  z-index: -2;
+  bottom: -5vh;
 }
 
 /* Image was om onbekende reden niet aan te spreken via :nth-of-type, vandaar de class */
@@ -134,7 +187,9 @@ img.ROB {
   right: -10vw;
   width: 30vw;
   height: auto;
-  scale: 0.9;
+  /* scale: 0.9; */
+  max-zoom: 1.5;
+  z-index: -3;
 }
 
 /* img:nth-of-type(3) {
@@ -203,13 +258,13 @@ button:nth-of-type(1){
   height: 30vh;
   left: calc(50% - 5vw);
   top: 37vh;
-  z-index: 11;
+  z-index: 50;
   opacity: 0%;
 }
 
 /* Button voor stekker die nog niet gebruikt wordt */
 
-button:nth-of-type(2){
+/* button:nth-of-type(1){
   position: absolute;
   width: 3vw;
   height: 5vh;
@@ -217,22 +272,30 @@ button:nth-of-type(2){
   bottom: 0;
   z-index: 11;
   opacity: 0%;
+} */
+
+/* coin button */
+
+button:nth-of-type(3){
+  position: absolute;
+  left: 15vw;
+  bottom: 15vh;
+  opacity: 0;
+  z-index: 500;
+  width: 100px;
+  height: 200px;
 }
+
+/* ster button */
 
 button:nth-of-type(4){
   position: absolute;
-  left: 15vw;
-  top: 85vh;
+  left: 1vw;
+  top: 10vh;
   opacity: 0;
   z-index: 500;
-}
-
-button:nth-of-type(5){
-  position: absolute;
-  left: 5vw;
-  top: 22vh;
-  opacity: 0;
-  z-index: 500;
+  width: 150px;
+  height: 150px;
 }
 
 /* ======================== */
@@ -244,10 +307,10 @@ button:nth-of-type(5){
 
 
 /**********************************/
-/*    Section 1: controller SVGH  */
+/*    Section 1: controller SVG  */
 /**********************************/
 
-body section:nth-of-type(1) {
+body > section:nth-of-type(1) {
   /* display: grid;
   place-items: center; */
   /* margin-top: 15vh; */
@@ -271,7 +334,7 @@ svg {
 
 svg:hover {
   bottom: 10vh;
-  scale: 1.4;
+  scale: 2;
   transition: ease-in-out .5s;
   cursor: url(../images/handjepointersmall.png), pointer;
 }
@@ -290,7 +353,7 @@ svg:hover {
 /***********************************/
 
 
-body section:nth-of-type(2){
+body > section:nth-of-type(2){
   position: absolute;
   top: 1vh;
   left: 1vw;
@@ -340,35 +403,7 @@ body section:nth-of-type(2) p{
 
 
 
-/***********************************/
-/*    Section 3: gifjes van games  */
-/***********************************/
 
-
-body section:nth-of-type(3) {
-  position: absolute;
-  /* left: calc(50%-20vw); */
-  right: calc(50% - 20vw);
-  top: 2.5%;
-  /* bottom: 0; */
-  width: 40vw;
-  height: 30vw;
-  scale: .5;
-  z-index: -5;
-}
-
-
-body section:nth-of-type(3) img{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: calc(50%-10vw);
-}
-
-
-.upper{
-  z-index: 3;
-}
 
 /* ======================================= */
 
